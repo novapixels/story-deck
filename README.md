@@ -1,1 +1,1 @@
-# story-deck
+# Story Deck
