@@ -1,0 +1,2465 @@
+Started GET "/businesses/7/stories" for 127.0.0.1 at 2021-11-25 16:07:58 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoriesController#index as HTML
+  Parameters: {"business_id"=>"7"}
+  Rendering stories/index.html.erb within layouts/application
+  [1m[36mStory Load (10.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/stories/index.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (9.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Story"], ["name", "photos"]]
+  ↳ app/views/stories/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stories/index.html.erb:5
+  Rendered stories/index.html.erb within layouts/application (Duration: 103.8ms | Allocations: 34256)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 39.1ms | Allocations: 43386)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    2: 
+    3: <%= @stories.each do |story| %>
+    4:   <% story.photos.each do |photo| %>
+    5:   <%= cl_image_tag photo.key %>
+    6:   <% end %>
+    7: <% end %>
+  
+app/views/stories/index.html.erb:5
+app/views/stories/index.html.erb:4
+app/views/stories/index.html.erb:3
+Started GET "/businesses/7/" for 127.0.0.1 at 2021-11-25 16:08:05 +0100
+Processing by BusinessesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/businesses_controller.rb:8:in `show'
+  Rendering businesses/show.html.erb within layouts/application
+  Rendered businesses/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 66)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mo/code/novapixels/StoryDeck/public/packs
+[Webpacker] warning ../../../package.json: No license field
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 70063f61ef50807377f2
+Version: webpack 4.46.0
+Time: 453ms
+Built at: 11/25/2021 4:08:08 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-088349d020f9403256ab.js    612 KiB  application  [emitted] [immutable]  application
+js/application-088349d020f9403256ab.js.map    751 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-088349d020f9403256ab.js js/application-088349d020f9403256ab.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.67 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered components/_navbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 86)
+Completed 200 OK in 2392ms (Views: 2358.4ms | ActiveRecord: 6.0ms | Allocations: 139990)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:08:16 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (52.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 189.2ms | Allocations: 34874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 212ms (Views: 143.6ms | ActiveRecord: 60.8ms | Allocations: 45746)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:09:39 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 41.8ms | Allocations: 13384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 72ms (Views: 65.5ms | ActiveRecord: 1.2ms | Allocations: 24093)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:14:44 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 43.7ms | Allocations: 13385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 787ms (Views: 777.8ms | ActiveRecord: 1.1ms | Allocations: 95689)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:16:15 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 53.4ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 791ms (Views: 778.7ms | ActiveRecord: 1.1ms | Allocations: 100042)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:17:43 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 39.5ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 803ms (Views: 794.9ms | ActiveRecord: 1.3ms | Allocations: 95658)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:19:55 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 48.0ms | Allocations: 13620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 170)
+  Rendered components/_footer.html.erb (Duration: 0.1ms | Allocations: 84)
+Completed 200 OK in 794ms (Views: 786.1ms | ActiveRecord: 1.1ms | Allocations: 97440)
+
+
+Started GET "/businesses/7/" for 127.0.0.1 at 2021-11-25 16:20:16 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BusinessesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/businesses_controller.rb:8:in `show'
+  Rendering businesses/show.html.erb within layouts/application
+  Rendered businesses/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 203)
+  Rendered components/_footer.html.erb (Duration: 0.1ms | Allocations: 86)
+Completed 200 OK in 93ms (Views: 71.1ms | ActiveRecord: 6.1ms | Allocations: 56749)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:21:29 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 46.0ms | Allocations: 29997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 924ms (Views: 898.1ms | ActiveRecord: 15.8ms | Allocations: 125196)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:22:10 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 38.9ms | Allocations: 13354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 767ms (Views: 759.8ms | ActiveRecord: 1.2ms | Allocations: 103216)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:22:25 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 46.3ms | Allocations: 13362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 746ms (Views: 739.0ms | ActiveRecord: 2.6ms | Allocations: 106421)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:23:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 74.5ms | Allocations: 13342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 797ms (Views: 786.9ms | ActiveRecord: 1.5ms | Allocations: 107287)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:23:45 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 51.0ms | Allocations: 13351)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 788ms (Views: 779.7ms | ActiveRecord: 2.2ms | Allocations: 106415)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:23:55 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 45.1ms | Allocations: 13359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 74ms (Views: 62.0ms | ActiveRecord: 1.2ms | Allocations: 24124)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:33:08 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 48.9ms | Allocations: 13335)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 82ms (Views: 70.1ms | ActiveRecord: 2.0ms | Allocations: 24136)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:33:10 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 34.8ms | Allocations: 13337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 0.9ms | Allocations: 24022)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:34:19 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 47.2ms | Allocations: 13350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 789ms (Views: 782.1ms | ActiveRecord: 1.4ms | Allocations: 107055)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:34:26 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 41.0ms | Allocations: 13338)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 642ms (Views: 637.1ms | ActiveRecord: 1.0ms | Allocations: 106579)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:35:21 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 50.2ms | Allocations: 13362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 776ms (Views: 766.7ms | ActiveRecord: 1.1ms | Allocations: 107470)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:36:48 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (3.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 42.9ms | Allocations: 13362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 804ms (Views: 795.4ms | ActiveRecord: 3.6ms | Allocations: 106633)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:37:13 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 55.7ms | Allocations: 13353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 83ms (Views: 76.9ms | ActiveRecord: 1.1ms | Allocations: 24145)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:38:05 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (6.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 37.6ms | Allocations: 13333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 811ms (Views: 792.8ms | ActiveRecord: 6.3ms | Allocations: 107505)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:38:07 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 32.6ms | Allocations: 13352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 1.6ms | Allocations: 24088)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:42:47 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 38.3ms | Allocations: 13337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 756ms (Views: 751.4ms | ActiveRecord: 0.9ms | Allocations: 106597)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:44:38 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 49.7ms | Allocations: 13363)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 798ms (Views: 787.0ms | ActiveRecord: 1.7ms | Allocations: 107057)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:44:52 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 41.6ms | Allocations: 13350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 798ms (Views: 792.6ms | ActiveRecord: 0.9ms | Allocations: 107066)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 16:45:20 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 65.5ms | Allocations: 13343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 743ms (Views: 736.9ms | ActiveRecord: 1.0ms | Allocations: 107453)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:01:02 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 41.6ms | Allocations: 13564)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 10.0ms | Allocations: 4473)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 85)
+Completed 200 OK in 107ms (Views: 80.9ms | ActiveRecord: 2.9ms | Allocations: 30287)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:01:32 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 21.8ms | Allocations: 13388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 1.1ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 5)
+Completed 200 OK in 70ms (Views: 36.0ms | ActiveRecord: 1.9ms | Allocations: 24241)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:01:33 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (2.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 29.9ms | Allocations: 13357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 2.6ms | Allocations: 24207)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:01:46 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 44.1ms | Allocations: 13563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.7ms | Allocations: 288)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 77ms (Views: 63.2ms | ActiveRecord: 1.3ms | Allocations: 25999)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:01:47 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 11198)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:01:47 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:03:19 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 49.7ms | Allocations: 13419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.4ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 79ms (Views: 66.4ms | ActiveRecord: 1.1ms | Allocations: 24271)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:03:28 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 5.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.0ms | Allocations: 10450)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:03:28 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/..." for 127.0.0.1 at 2021-11-25 17:03:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/businesses/7/stories/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:03:36 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 56ms (Views: 47.0ms | ActiveRecord: 1.7ms | Allocations: 24263)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:03:43 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 41.0ms | Allocations: 13381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 63ms (Views: 56.0ms | ActiveRecord: 1.2ms | Allocations: 24220)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:03:51 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 10436)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:03:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/..." for 127.0.0.1 at 2021-11-25 17:03:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/businesses/7/stories/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:04:15 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 2.0ms | Allocations: 24262)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:04:19 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 33.2ms | Allocations: 13381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.7ms | Allocations: 24216)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:05:42 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 2.1ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 10436)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:05:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:06:10 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 10443)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:06:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:08:51 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 72)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mo/code/novapixels/StoryDeck/public/packs
+[Webpacker] warning ../../../package.json: No license field
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 50de759da3227bd2d649
+Version: webpack 4.46.0
+Time: 458ms
+Built at: 11/25/2021 5:08:52 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-3893faad5278c155dba2.js    612 KiB  application  [emitted] [immutable]  application
+js/application-3893faad5278c155dba2.js.map    751 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-3893faad5278c155dba2.js js/application-3893faad5278c155dba2.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.7 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1537ms (Views: 1535.5ms | ActiveRecord: 0.0ms | Allocations: 11647)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:08:52 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:08:59 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 10457)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:08:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stories" for 127.0.0.1 at 2021-11-25 17:11:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/stories"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:11:18 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 10465)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stories" for 127.0.0.1 at 2021-11-25 17:11:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/stories"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:27 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:11:27 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 40971)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:11:27 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:11:38 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 34.5ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 46.5ms | ActiveRecord: 3.6ms | Allocations: 24243)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:13:05 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 51.3ms | Allocations: 13381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 810ms (Views: 797.7ms | ActiveRecord: 1.6ms | Allocations: 107368)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:13:52 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 47.8ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 785ms (Views: 774.2ms | ActiveRecord: 1.1ms | Allocations: 107410)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:14:26 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 40.2ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.4ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 66ms (Views: 57.2ms | ActiveRecord: 1.1ms | Allocations: 24306)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:14:55 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 37.5ms | Allocations: 13381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 761ms (Views: 755.8ms | ActiveRecord: 1.0ms | Allocations: 107363)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:15:03 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 60.2ms | Allocations: 13410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 715ms (Views: 701.0ms | ActiveRecord: 2.5ms | Allocations: 107414)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:18:37 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 59.6ms | Allocations: 13504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.8ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 97ms (Views: 87.5ms | ActiveRecord: 1.2ms | Allocations: 25982)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:19:46 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 45.9ms | Allocations: 13467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.8ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 81ms (Views: 75.0ms | ActiveRecord: 1.1ms | Allocations: 25931)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:23:09 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 742ms (Views: 738.5ms | ActiveRecord: 0.0ms | Allocations: 94463)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:23:10 +0100
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:23:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 10731)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:23:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:23:16 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 26.4ms | Allocations: 13297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 0.8ms | Allocations: 24179)
+
+
+Started GET "/businesses/7/stories/..." for 127.0.0.1 at 2021-11-25 17:23:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/businesses/7/stories/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:26:17 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 47.4ms | Allocations: 13484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.6ms | Allocations: 290)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 755ms (Views: 748.4ms | ActiveRecord: 1.2ms | Allocations: 109105)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:27:53 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 43.1ms | Allocations: 13285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 774ms (Views: 767.7ms | ActiveRecord: 1.1ms | Allocations: 106881)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:28:04 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 43.7ms | Allocations: 13502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.8ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 79ms (Views: 70.2ms | ActiveRecord: 1.2ms | Allocations: 25973)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:28:28 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 49.7ms | Allocations: 13269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 826ms (Views: 818.8ms | ActiveRecord: 1.5ms | Allocations: 107291)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:28:45 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 46.5ms | Allocations: 13278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 77ms (Views: 70.8ms | ActiveRecord: 1.2ms | Allocations: 24172)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:28:54 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 55.3ms | Allocations: 13477)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 1.0ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 94ms (Views: 87.5ms | ActiveRecord: 1.3ms | Allocations: 25944)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 40.4ms | Allocations: 13467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.7ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 67ms (Views: 60.3ms | ActiveRecord: 1.1ms | Allocations: 25970)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 34.1ms | Allocations: 13277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 1.3ms | Allocations: 24168)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 49.0ms | Allocations: 13265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.5ms | Allocations: 24158)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 30.2ms | Allocations: 13266)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.4ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.6ms | Allocations: 24156)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 16.1ms | Allocations: 13258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.6ms | Allocations: 24158)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 22.0ms | Allocations: 13262)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.8ms | Allocations: 24137)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 13258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.6ms | Allocations: 24150)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:02 +0100
+  Rendered stories/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 14278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 1.4ms | Allocations: 26040)
+
+
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (12.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  [1m[36mCategory Load (4.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 32.1ms | Allocations: 21510)
+  Rendered stories/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 18326)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 56ms (Views: 46.3ms | ActiveRecord: 5.9ms | Allocations: 48300)
+
+
+Completed 200 OK in 56ms (Views: 39.4ms | ActiveRecord: 13.7ms | Allocations: 48125)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:07 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 13260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.9ms | Allocations: 24144)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:09 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 31.3ms | Allocations: 13264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.8ms | Allocations: 24150)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:09 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 24.7ms | Allocations: 13276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.9ms | Allocations: 24164)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:10 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:10 +0100
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 28.4ms | Allocations: 13846)
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 25.2ms | Allocations: 13595)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 76ms (Views: 73.1ms | ActiveRecord: 0.8ms | Allocations: 48773)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.1ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.9ms | Allocations: 32388)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:24 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 29.5ms | Allocations: 13260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.9ms | Allocations: 24159)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:29:50 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 43.0ms | Allocations: 13473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.7ms | Allocations: 290)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 91ms (Views: 83.5ms | ActiveRecord: 1.4ms | Allocations: 25949)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:30:22 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 45.9ms | Allocations: 13288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.4ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 85ms (Views: 71.5ms | ActiveRecord: 1.3ms | Allocations: 24216)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:30:45 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 50.1ms | Allocations: 13264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 785ms (Views: 779.2ms | ActiveRecord: 1.2ms | Allocations: 107755)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:32:25 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 57.4ms | Allocations: 13289)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 772ms (Views: 765.6ms | ActiveRecord: 1.1ms | Allocations: 107748)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:32:35 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (21.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 52.5ms | Allocations: 13489)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.5ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 86ms (Views: 58.2ms | ActiveRecord: 21.6ms | Allocations: 25959)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:33:58 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 46.2ms | Allocations: 13273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 801ms (Views: 790.0ms | ActiveRecord: 2.1ms | Allocations: 107737)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:34:09 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 59.7ms | Allocations: 13291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 834ms (Views: 826.1ms | ActiveRecord: 2.0ms | Allocations: 106903)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:34:20 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 57.4ms | Allocations: 13277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 817ms (Views: 803.0ms | ActiveRecord: 1.2ms | Allocations: 108154)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:34:51 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 56.7ms | Allocations: 13502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 1.6ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 0.9ms | Allocations: 25981)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:34:53 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 35.5ms | Allocations: 13283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 48.3ms | ActiveRecord: 0.8ms | Allocations: 24176)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:35:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 52.9ms | Allocations: 13466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.8ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 86ms (Views: 74.2ms | ActiveRecord: 1.2ms | Allocations: 25933)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:37:01 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  Rendered stories/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1125)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms | Allocations: 2959)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="create-story-header mb-4">
+  <div class="container">
+    <h1 class="white">Create a new story</h1>
+  </div>
+</div>
+<div class="container">
+<%= simple_form_for([@business, @story]) do |f| %>
+  <%= f.input :title, label: false, placeholder: 'Your title', required: true %>
+  <%= f.input :description, label: false, placeholder: 'In a few words, tell us what your story is about.', as: :text, required: true %>
+  <%= f.association :categories, as: :check_boxes, multiple: true %>
+  <%= f.input :photos, as: :file, label: 'Upload your photo here' required: true, input_html: { multiple: true } %>
+  <%= f.button :submit, class: 'btn-custom-dark' %>
+<% end %>
+</div>
+
+):
+1:    
+2:    <div class="create-story-header mb-4">
+3:      <div class="container">
+4:        <h1 class="white">Create a new story</h1>
+5:      </div>
+6:    </div>
+7:    <div class="container">
+8:    <%= simple_form_for([@business, @story]) do |f| %>
+9:      <%= f.input :title, label: false, placeholder: 'Your title', required: true %>
+10:      <%= f.input :description, label: false, placeholder: 'In a few words, tell us what your story is about.', as: :text, required: true %>
+11:      <%= f.association :categories, as: :check_boxes, multiple: true %>
+12:      <%= f.input :photos, as: :file, label: 'Upload your photo here' required: true, input_html: { multiple: true } %>
+13:      <%= f.button :submit, class: 'btn-custom-dark' %>
+14:    <% end %>
+15:    </div>
+  
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+app/views/stories/new.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/stories/new.html.erb:12: Can't assign to true
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:37:08 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 32.1ms | Allocations: 12894)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.8ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 1.0ms | Allocations: 25374)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:40:23 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.4ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 11283)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:40:23 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/..." for 127.0.0.1 at 2021-11-25 17:40:27 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/businesses/7/stories/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:40:29 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.5ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 10856)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:40:29 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/..." for 127.0.0.1 at 2021-11-25 17:40:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/businesses/7/stories/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:44:07 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 66.1ms | Allocations: 12900)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.7ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 103ms (Views: 86.2ms | ActiveRecord: 8.9ms | Allocations: 25471)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:45:15 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 48.0ms | Allocations: 12675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 819ms (Views: 807.1ms | ActiveRecord: 1.9ms | Allocations: 106729)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:45:27 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 53.1ms | Allocations: 12898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.9ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 94ms (Views: 82.4ms | ActiveRecord: 1.7ms | Allocations: 25383)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:45:43 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 48.4ms | Allocations: 12865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.6ms | Allocations: 293)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 768ms (Views: 760.2ms | ActiveRecord: 2.7ms | Allocations: 108908)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:45:45 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 12693)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 1.0ms | Allocations: 23581)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:46:40 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 50.1ms | Allocations: 12865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.5ms | Allocations: 292)
+  Rendered components/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 802ms (Views: 792.4ms | ActiveRecord: 1.2ms | Allocations: 108051)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:48:24 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (1.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (5.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 48.5ms | Allocations: 12694)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 152)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 82ms (Views: 68.4ms | ActiveRecord: 6.7ms | Allocations: 23578)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:48:26 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 34.7ms | Allocations: 12656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered components/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 49.5ms | ActiveRecord: 0.9ms | Allocations: 23542)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:48:52 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 40.8ms | Allocations: 12889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 1.0ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 70ms (Views: 62.9ms | ActiveRecord: 1.3ms | Allocations: 25374)
+
+
+Started GET "/businesses/7/stories/new" for 127.0.0.1 at 2021-11-25 17:56:28 +0100
+Processing by StoriesController#new as HTML
+  Parameters: {"business_id"=>"7"}
+  [1m[36mBusiness Load (0.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/stories_controller.rb:11:in `new'
+  Rendering stories/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/stories/new.html.erb:11
+  Rendered stories/new.html.erb within layouts/application (Duration: 49.7ms | Allocations: 12878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.9ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 93ms (Views: 78.4ms | ActiveRecord: 2.9ms | Allocations: 25447)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-25 17:56:58 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered components/_navbar.html.erb (Duration: 0.7ms | Allocations: 287)
+  Rendered components/_footer.html.erb (Duration: 0.6ms | Allocations: 84)
+Completed 200 OK in 59ms (Views: 50.4ms | ActiveRecord: 0.0ms | Allocations: 12206)
+
+
+Started GET "/..." for 127.0.0.1 at 2021-11-25 17:56:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
